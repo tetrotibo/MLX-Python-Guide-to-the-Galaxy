@@ -47,7 +47,7 @@ apt-get install -y libx11-dev libxext-dev libxcb-keysyms1
 
 From the root of the cloned repository:
 ```bash
-pip3 install 00.install/mlx-2.2-py3-none-any.whl
+pip3 install 00_install/mlx-2.2-py3-none-any.whl
 ```
 
 **4. Verify**
