@@ -18,7 +18,7 @@ falls into place, is yours to experience.
 
 MLX has more to offer than what this guide covers. Bitmap fonts,
 sprites, elaborate UI and other techniques are left for you to find.
-Think of this as a bridge - from completely lost to having
+This guide serves as a bridge, from completely lost to having
 a solid foundation you can build your own project on.
 
 ## Installation
