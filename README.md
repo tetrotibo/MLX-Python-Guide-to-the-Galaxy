@@ -26,7 +26,7 @@ a solid foundation you can build your own project on.
 | Platform | Status |
 | -------- | ------ |
 | **Linux AMD64** | 🟢 Fully supported - tested on Ubuntu 22.04 AMD64 |
-| **Mac Silicon** | 🟢 Working via Docker `--platform linux/amd64` - tested on Mac Ventura 13.4 (Mac Studio M2) |
+| **Mac Silicon** | 🟢 Working via Docker `--platform linux/amd64` - tested on Ventura 13.4 (Mac Studio M2) |
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
