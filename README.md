@@ -1,4 +1,4 @@
-_This guide was written alongside A-MAZE-ING, a 42 school project
+_This guide was written alongside A-MAZE-ING, a school project
 by tdarscot and tdhenain at 42 Belgium._
 
 ## About
