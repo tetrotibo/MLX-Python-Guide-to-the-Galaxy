@@ -99,20 +99,6 @@ A window should open. Press ESC or click the X button to close it.
 
 ## Conventions
 
-### BORDER
-
-Every module that draws a tile grid uses a one-tile margin:
-
-```python
-BORDER = 1
-W = (GRID_COLS + 2 * BORDER) * TILE_SIZE
-H = (GRID_ROWS + 2 * BORDER) * TILE_SIZE
-```
-
-`write_rect` uses raw slice assignment into the image buffer and
-raises `ValueError` if its range exceeds the buffer size. `BORDER`
-ensures outermost wall strips never reach the window edge.
-
 ### Tile coordinates
 
 Tile indices are always converted to pixel positions via:
