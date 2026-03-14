@@ -238,7 +238,7 @@ that saved everyone.
 **gdupret** - for his last-minute tips that always arrive
 exactly when they are needed.
 
-**syalcin** and **aouassar** — for their feedback on A-MAZE-ING.
+**mhummels**, **syalcin** and **aouassar** — for their feedback on A-MAZE-ING.
 
 Also thanks to **mhummels**, **gdupret**, **gwfranco**, **cgazen**,
 **kprist**, and  **dloic** for sharing their A-MAZE-ING — seeing
