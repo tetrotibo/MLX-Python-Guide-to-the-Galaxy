@@ -62,10 +62,10 @@ A window should open. Press ESC or click the X button to close it.
 | File                  | Topic                                              |
 | --------------------- | -------------------------------------------------- |
 | M01 - init            | MLX init, window creation, clean shutdown          |
-| M02 - image buffer    | Image buffer, write_pixel, write_rect              |
+| M02 - image buffer    | Image buffer, `write_pixel()`, `write_rect()`      |
 | M03 - tile grid       | Tile coordinates, inset tiles, wall bitmasks       |
 | M04 - draw order      | Draw order, compositor pattern, UI split           |
-| M05 - text            | mlx_string_put, color conversion, draw order       |
+| M05 - text            | `mlx_string_put()`, color conversion, draw order   |
 | M06 - interactive     | Input handling, game loop, deferred pattern        |
 
 
@@ -73,36 +73,35 @@ A window should open. Press ESC or click the X button to close it.
 
 | File                  | Error                                              |
 | --------------------- | -------------------------------------------------- |
-| E01 - bounds          | write_rect overflow - silent corruption vs crash   |
-| E02 - no loop         | Missing mlx_loop() - window closes immediately     |
+| E01 - bounds          | `write_rect()` overflow - silent corruption vs crash |
+| E02 - no loop         | Missing `mlx_loop()` - window closes immediately   |
 | E03 - mask key press  | Wrong mask on key hook - keys never fire           |
 | E04 - x button        | Missing close handler - X button has no effect     |
-| E05 - sync loop       | mlx_loop is single-threaded and synchronous        |
-| E06 - text overwrite  | mlx_string_put erased by mlx_put_image_to_window   |
-| E07 - str color       | mlx_string_put expects 0xBBGGRR not 0xRRGGBB       |
+| E05 - sync loop       | `mlx_loop()` is single-threaded and synchronous    |
+| E06 - text overwrite  | `mlx_string_put()` erased by `mlx_put_image_to_window()` |
+| E07 - str color       | `mlx_string_put()` expects 0xBBGGRR not 0xRRGGBB  |
 
 ## Diagnostics
 
 | File                  | Topic                                              |
 | --------------------- | -------------------------------------------------- |
-| D01 - memory leak     | mlx_new_image without mlx_destroy_image            |
-| D02 - frame rate      | Measuring effective FPS via mlx_loop_hook          |
-| D03 - key repeat      | X11/XQuartz key autorepeat behavior                |
+| D01 - memory leak     | `mlx_new_image()` without `mlx_destroy_image()`   |
+| D02 - frame rate      | Measuring effective FPS via `mlx_loop_hook()`     |
+| D03 - key repeat      | X11/XQuartz key autorepeat behavior               |
 
 ## Broken MLX Functions
 
 | File                  | Topic                                              |
 | --------------------- | -------------------------------------------------- |
-| B01 - pixel put 01    | mlx_pixel_put called before mlx_loop - black       |
-| B01 - pixel put 02    | mlx_pixel_put called from key handler - black      |
-| B01 - pixel put 03    | mlx_pixel_put with explicit flush - black          |
+| B01 - pixel put 01    | `mlx_pixel_put()` called before `mlx_loop()` - black |
+| B01 - pixel put 02    | `mlx_pixel_put()` called from key handler - black  |
+| B01 - pixel put 03    | `mlx_pixel_put()` with explicit flush - black      |
 
 ## Conventions
 
 ### Tile coordinates
 
 Tile indices are always converted to pixel positions via:
-
 ```python
 def tile_px(tile_col): return (tile_col + BORDER) * TILE_SIZE
 def tile_py(tile_row): return (tile_row + BORDER) * TILE_SIZE
@@ -110,7 +109,7 @@ def tile_py(tile_row): return (tile_row + BORDER) * TILE_SIZE
 
 ### Inset tiles
 
-`draw_tile` fills only the interior of a tile, leaving `WALL_SIZE`
+`draw_tile()` fills only the interior of a tile, leaving `WALL_SIZE`
 pixels on each edge as a gap. Without this, two adjacent same-color
 tiles bleed into a solid block with no visible separation at open
 passages.
@@ -129,8 +128,7 @@ M03 but not used in the guide.
 ### Draw order
 
 MLX has no real layers - just one flat pixel buffer. The last
-`write_rect` call to touch a pixel wins. The correct draw stack:
-
+`write_rect()` call to touch a pixel wins. The correct draw stack:
 ```
 1. Background fill + floor tiles
 2. Pattern tiles
@@ -143,7 +141,7 @@ MLX has no real layers - just one flat pixel buffer. The last
 
 ## Color Constants
 
-All constants use `0xRRGGBB` with a `C_` prefix. `write_rect`
+All constants use `0xRRGGBB` with a `C_` prefix. `write_rect()`
 handles the BGR conversion internally.
 
 | Constant        | Role                            |
@@ -162,7 +160,6 @@ handles the BGR conversion internally.
 ## Wall Bitmask Format
 
 Used in M03 onwards to encode which walls are present on a cell:
-
 ```
 bit 3 (0b1000) = West
 bit 2 (0b0100) = South
@@ -183,11 +180,10 @@ Extracting a bit: `(bitmask >> bit_position) & 1`
 
 ### Deferred pattern
 
-Key handlers run synchronously inside `mlx_loop` - there is no
+Key handlers run synchronously inside `mlx_loop()` - there is no
 parallelism. While a handler executes, the loop is paused and no
 redraws happen. The deferred pattern lets you render visual feedback
 before work runs on the next frame:
-
 ```python
 # In key_press_handler:
 pending_action = True
@@ -226,5 +222,5 @@ exactly when they are needed.
 **mhummels**, **syalcin** and **aouassar** — for their feedback on A-MAZE-ING.
 
 Also thanks to **mhummels**, **gdupret**, **gwfranco**, **cgazen**,
-**kprist**, and  **dloic** for sharing their A-MAZE-ING — seeing
+**kprist**, and **dloic** for sharing their A-MAZE-ING — seeing
 different approaches to the same project was invaluable.
