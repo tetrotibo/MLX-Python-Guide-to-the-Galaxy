@@ -8,10 +8,10 @@ documentation and many students hit the same walls. Everything here
 is based on my original research and experimentation done during the
 development of A-MAZE-ING.
 
-The goal is not to hand you solutions - it is to save you the days
-of searching that should not be necessary just to open a window and
-draw a pixel. This is the guide that would have been useful as I
-started developing the visualizer for A-MAZE-ING: enough to get
+The goal is not to hand you ready-made solutions - it is to save you
+the days of searching that should not be necessary just to open a window
+and draw a pixel. This is the guide that would have been useful
+as I started developing the visualizer for A-MAZE-ING: enough to get
 unstuck, not enough to skip the discovery. The progressive
 understanding of how MLX works, and the moment where everything
 falls into place, is yours to experience.
