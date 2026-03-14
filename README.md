@@ -25,10 +25,10 @@ a solid foundation you can build on.
 
 | Platform | Status |
 | -------- | ------ |
-| **Linux AMD64** | ✅ Fully supported - tested on Ubuntu 22.04 |
-| **Mac Intel** | ⚠️ Should work - not officially tested |
-| **Mac Silicon (M1/M2/M3/M4)** | ❌ Not supported natively - run via Docker `--platform linux/amd64` |
-| **Windows** | ⚠️ WSL2 with WSLg may work - not officially tested |
+| **Linux AMD64** | 🟢 Fully supported - tested on Ubuntu 22.04 |
+| **Mac Silicon (M1/M2/M3/M4)** | 🟢 Not supported natively - run via Docker `--platform linux/amd64` |
+| **Mac Intel** | 🟡 Should work - not officially tested |
+| **Windows** | 🟡 WSL2 with WSLg may work - not officially tested |
 |||
 
 **1. Install Python and pip**
