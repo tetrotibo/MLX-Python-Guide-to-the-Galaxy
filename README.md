@@ -16,7 +16,7 @@ unstuck, not enough to skip the discovery. The progressive
 understanding of how MLX works, and the moment where everything
 falls into place, is yours to experience.
 
-MLX has more to offer than what this guide covers. Bitmap fonts,
+MLX has more to offer than what is covered here. Bitmap fonts,
 sprites, elaborate UI and other techniques are left for you to find.
 This guide serves as a bridge, from completely lost to having
 a solid foundation you can build your own project on.
