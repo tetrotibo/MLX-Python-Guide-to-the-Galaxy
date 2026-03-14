@@ -1,5 +1,5 @@
 _This guide was written alongside A-MAZE-ING, a 42 school project
-by tdarscot and tdhenain._
+by tdarscot and tdhenain at 42 Belgium._
 
 ## About
 
@@ -217,3 +217,29 @@ if pending_action:
 
 The freeze still happens - the pattern ensures feedback appears
 before it. See M06 and E05 for full demonstrations.
+
+## Thanks
+
+**amaazouz** — for his curiosity about MLX and A-MAZE-ING, which
+pushed me to document what I'd learned.
+
+**dloic** — for his completely different approach to wall rendering
+that made me think harder about my own, and for being just as
+frustrated by the lack of MLX documentation - which is part of
+why this guide exists.
+
+**tdhenain** — for his partnership throughout A-MAZE-ING.
+
+**cgazen** and **kprist** — for discovering the close window fix
+that saved everyone.
+
+**gwfranco** — for his terminal-based take on A-MAZE-ING.
+
+**gdupret** - for his last-minute tips that always arrive
+exactly when they are needed.
+
+**syalcin** and **aouassar** — for their feedback on A-MAZE-ING.
+
+Also thanks to **mhummels**, **gdupret**, **gwfranco**, **cgazen**,
+**kprist**, and  **dloic** for sharing their A-MAZE-ING — seeing
+different approaches to the same project was invaluable.
