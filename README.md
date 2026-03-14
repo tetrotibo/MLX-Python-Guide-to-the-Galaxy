@@ -42,7 +42,7 @@ apt-get update && apt-get install -y python3 python3-pip
 apt-get install -y libx11-dev libxext-dev libxcb-keysyms1
 ```
 
-**3. Install the MLX wheel**
+**3. Install MLX wheel**
 
 From the root of the cloned repository:
 ```bash
