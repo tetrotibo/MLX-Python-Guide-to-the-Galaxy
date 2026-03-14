@@ -23,7 +23,13 @@ a solid foundation you can build on.
 
 ## Installation
 
-Tested on Ubuntu 22.04 (AMD64) - the environment used at 42 school.
+| Platform | Status |
+| -------- | ------ |
+| **Linux AMD64** | ✅ Fully supported - tested on Ubuntu 22.04 |
+| **Mac Intel** | ⚠️ Should work - not officially tested |
+| **Mac Silicon (M1/M2/M3/M4)** | ❌ Not supported natively - run via Docker `--platform linux/amd64` |
+| **Windows** | ⚠️ WSL2 with WSLg may work - not officially tested |
+|||
 
 **1. Install Python and pip**
 
@@ -51,9 +57,6 @@ python3 01.modules/M01_init.py
 
 A window should open. Press ESC or click the X button to close it.
 
-> WSL2 with WSLg may work but is not officially tested.
-> Mac is not supported directly - MLX requires X11/XQuartz and AMD64.
-...
 
 ## Modules
 
