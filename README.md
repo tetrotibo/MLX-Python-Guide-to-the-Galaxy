@@ -21,7 +21,7 @@ sprites, elaborate UI and other techniques are left for you to find.
 This guide serves as a bridge, from completely lost to having
 a solid foundation you can build your own project on.
 
-# Installation
+## Installation
 
 | Platform | Status |
 | -------- | ------ |
