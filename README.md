@@ -30,9 +30,9 @@ a solid foundation you can build your own project on.
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
-**Mac Silicon: Docker setup**
+**Mac Silicon: Docker setup (skip if on other platform)**
 
-Install XQuartz:
+Install XQuartz via Homebrew or from [xquartz.org](https://www.xquartz.org):
 ```bash
 brew install --cask xquartz
 ```
@@ -49,7 +49,7 @@ docker run -it --platform linux/amd64 \
 
 Then follow the installation steps below inside the container.
 
-**Linux (Ubuntu/Debian): Installation steps**
+**Installation steps**
 
 **1. Install Python and pip**
 
