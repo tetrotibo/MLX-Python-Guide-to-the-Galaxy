@@ -71,6 +71,16 @@ python3 01_modules/M01_init.py
 
 A window should open. Press ESC or click the X button to close it.
 
+## Repo Structure
+
+| Folder                     | Contents                        |
+| -------------------------- | ------------------------------- |
+| `00_install/`              | MLX wheel                       |
+| `01_modules/`              | Module files (M01–M06)          |
+| `02_common_errors/`        | Error demonstrations (E01–E07)  |
+| `03_diagnostics/`          | Diagnostic scripts (D01–D03)    |
+| `04_broken_mlx_functions/` | Broken function demos (B01)     |
+| `05_template/`             | Blank starter template          |
 
 ## Modules
 
