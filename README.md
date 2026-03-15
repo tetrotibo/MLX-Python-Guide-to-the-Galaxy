@@ -56,7 +56,7 @@ cd mlxguide
 
 **4. Install X11 dependencies**
 ```bash
-apt-get install -y libx11-dev libxext-dev libxcb-keysyms1
+apt-get install -y libx11-dev libxext-dev libxcb-keysyms1 libvulkan1
 ```
 
 **5. Install MLX wheel**
