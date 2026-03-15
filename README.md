@@ -30,6 +30,7 @@ a solid foundation you can build your own project on.
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
+
 >[!NOTE]
 >The following commands target Linux (Ubuntu/Debian). Mac users: see platform notes above.
 
