@@ -30,9 +30,26 @@ a solid foundation you can build your own project on.
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
+**Mac Silicon: Docker setup**
 
->[!NOTE]
->The following commands target Linux (Ubuntu/Debian). Mac users: see platform notes above.
+Install XQuartz:
+```bash
+brew install --cask xquartz
+```
+
+Then open XQuartz and enable "Allow connections from network clients" in XQuartz → Settings → Security. Log out and back in for the setting to take effect.
+
+Start a container:
+```bash
+docker run -it --platform linux/amd64 \
+  -e DISPLAY=host.docker.internal:0 \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  ubuntu:22.04 bash
+```
+
+Then follow the installation steps below inside the container.
+
+**Linux (Ubuntu/Debian): Installation steps**
 
 **1. Install Python and pip**
 
@@ -54,7 +71,7 @@ git clone https://github.com/tetrotibo/MLX-Python-Guide-to-the-Galaxy.git mlxgui
 cd mlxguide
 ```
 
-**4. Install X11 dependencies**
+**4. Install X11 and Vulkan dependencies**
 ```bash
 apt-get install -y libx11-dev libxext-dev libxcb-keysyms1 libvulkan1
 ```
@@ -92,7 +109,6 @@ A window should open. Press ESC or click the X button to close it.
 | M04 - draw order      | Draw order, compositor pattern, UI split           |
 | M05 - text            | `mlx_string_put()`, color conversion, draw order   |
 | M06 - interactive     | Input handling, game loop, deferred pattern        |
-
 
 ## Common Errors
 
@@ -241,10 +257,11 @@ that saved everyone.
 
 **gwfranco** — for his terminal-based take on A-MAZE-ING.
 
-**gdupret** - for his last-minute tips that always arrive
+**gdupret** — for his last-minute tips that always arrive
 exactly when they are needed.
 
-**mhummels**, **syalcin** and **aouassar** — for their feedback on A-MAZE-ING.
+**mhummels**, **syalcin** and **aouassar** — for their feedback on
+A-MAZE-ING.
 
 Also thanks to **mhummels**, **gdupret**, **gwfranco**, **cgazen**,
 **kprist**, and **dloic** for sharing their A-MAZE-ING — seeing
