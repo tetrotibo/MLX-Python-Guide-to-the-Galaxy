@@ -51,7 +51,7 @@ pip3 install 00_install/mlx-2.2-py3-none-any.whl
 
 **4. Verify**
 ```bash
-python3 01.modules/M01_init.py
+python3 01_modules/M01_init.py
 ```
 
 A window should open. Press ESC or click the X button to close it.
