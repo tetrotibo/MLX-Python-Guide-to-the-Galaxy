@@ -1,6 +1,6 @@
 ## MLX Python - All 34 Functions
 
-| Category | :Function | Returns | Description |
+| Category | Function | Returns | Description |
 | -------- | -------- | ------- | ----------- |
 | INIT | `mlx.Mlx()` | `Mlx` | Creates the MLX object - entry point for all function calls |
 | INIT | `m.mlx_init()` | `mlx_ptr` | Connects to the display server (X11/XQuartz), returns session handle |
