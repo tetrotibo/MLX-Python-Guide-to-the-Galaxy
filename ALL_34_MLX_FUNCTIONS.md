@@ -43,9 +43,9 @@
 
 <details>
 <summary><code>mlx.Mlx()</code></summary>
-<br>
+
 Creates a Python object that gives you access to all MLX functions. Think of it as opening a toolbox - `m` now contains all the methods you need. Without this, you can't call any MLX functions. It's just setting up the interface between Python and the underlying C library.
-<br>
+
 </details>
 
 <details>
