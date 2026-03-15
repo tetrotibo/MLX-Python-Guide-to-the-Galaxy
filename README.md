@@ -30,6 +30,9 @@ a solid foundation you can build your own project on.
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
+The following commands target Linux (Ubuntu/Debian). Mac users: see platform notes above.
+
+
 **1. Install Python and pip**
 
 Skip if already installed (`python3 --version` to check).
