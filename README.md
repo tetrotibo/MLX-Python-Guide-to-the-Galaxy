@@ -37,19 +37,26 @@ Skip if already installed (`python3 --version` to check).
 apt-get update && apt-get install -y python3 python3-pip
 ```
 
-**2. Install X11 dependencies**
+**2. Install git**
+
+Skip if already installed (`git --version` to check).
+```bash
+apt-get install -y git
+```
+
+**3. Install X11 dependencies**
 ```bash
 apt-get install -y libx11-dev libxext-dev libxcb-keysyms1
 ```
 
-**3. Install MLX wheel**
+**4. Install MLX wheel**
 
 From the root of the cloned repository:
 ```bash
 pip3 install 00_install/mlx-2.2-py3-none-any.whl
 ```
 
-**4. Verify**
+**5. Verify**
 ```bash
 python3 01_modules/M01_init.py
 ```
