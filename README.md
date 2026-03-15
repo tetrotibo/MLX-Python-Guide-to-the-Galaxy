@@ -49,7 +49,7 @@ docker run -it --platform linux/amd64 \
 
 Then follow the installation steps below inside the container.
 
-**Installation steps (all platforms)**
+### Installation steps (all platforms)
 
 **1. Install Python and pip**
 
