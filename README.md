@@ -21,8 +21,6 @@ sprites, elaborate UI and other techniques are left for you to find.
 This guide serves as a bridge, from completely lost to having
 a solid foundation you can build your own project on.
 
----
-
 ## Installation
 
 | Platform | Status |
@@ -32,7 +30,7 @@ a solid foundation you can build your own project on.
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
-**Mac Silicon: Docker setup (skip if on other platform)**
+###Mac Silicon: Docker setup (skip if on other platform)
 
 Install XQuartz via Homebrew or from [xquartz.org](https://www.xquartz.org):
 ```bash
