@@ -44,19 +44,23 @@ Skip if already installed (`git --version` to check).
 apt-get install -y git
 ```
 
-**3. Install X11 dependencies**
+**3. Clone the repository**
+```bash
+git clone https://github.com/tetrotibo/MLX-Python-Guide-to-the-Galaxy.git mlxguide
+cd mlxguide
+```
+
+**4. Install X11 dependencies**
 ```bash
 apt-get install -y libx11-dev libxext-dev libxcb-keysyms1
 ```
 
-**4. Install MLX wheel**
-
-From the root of the cloned repository:
+**5. Install MLX wheel**
 ```bash
 pip3 install 00_install/mlx-2.2-py3-none-any.whl
 ```
 
-**5. Verify**
+**6. Verify**
 ```bash
 python3 01_modules/M01_init.py
 ```
