@@ -1,4 +1,4 @@
-## Python MLX - All 34 Functions
+## MLX Python - All 34 Functions
 
 | Category | Function | Returns | Description |
 | -------- | -------- | ------- | ----------- |
