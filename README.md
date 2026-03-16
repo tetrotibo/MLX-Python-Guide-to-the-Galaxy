@@ -1,3 +1,5 @@
+MLX Python guide for 42 school projects — pixel buffer rendering, mlx_loop, input handling, common errors, and diagnostics.
+
 _This guide was written alongside A-Maze-ing, a school project
 by tdarscot and tdhenain at 42 Belgium._
 
