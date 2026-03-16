@@ -1,4 +1,4 @@
-_This guide was written alongside A-MAZE-ING, a school project
+_This guide was written alongside A-Maze-ing, a school project
 by tdarscot and tdhenain at 42 Belgium._
 
 ## About
@@ -6,12 +6,12 @@ by tdarscot and tdhenain at 42 Belgium._
 This guide exists because the Python MLX binding has almost no
 documentation and many students hit the same walls. Everything here
 is based on my original research and experimentation done during the
-development of A-MAZE-ING.
+development of A-Maze-ing.
 
 The goal is not to hand you ready-made solutions - it is to save you
 the days of searching that should not be necessary just to open a window
 and draw a pixel. This is the guide that would have been useful
-as I started developing the visualizer for A-MAZE-ING: enough to get
+as I started developing the visualizer for A-Maze-ing: enough to get
 unstuck, not enough to skip the discovery. The progressive
 understanding of how MLX works, and the moment where everything
 falls into place, is yours to experience.
@@ -242,7 +242,7 @@ before it. See M06 and E05 for full demonstrations.
 
 ## Thanks
 
-**amaazouz** — for his curiosity about MLX and A-MAZE-ING, which
+**amaazouz** — for his curiosity about MLX and A-Maze-ing, which
 pushed me to document what I'd learned.
 
 **dloic** — for his completely different approach to wall rendering
@@ -250,19 +250,19 @@ that made me think harder about my own, and for being just as
 frustrated by the lack of MLX documentation - which is part of
 why this guide exists.
 
-**tdhenain** — for his partnership throughout A-MAZE-ING.
+**tdhenain** — for his partnership throughout A-Maze-ing.
 
 **cgazen** and **kprist** — for discovering the close window fix
 that saved everyone.
 
-**gwfranco** — for his terminal-based take on A-MAZE-ING.
+**gwfranco** — for his terminal-based take on A-Maze-ing.
 
 **gdupret** — for his last-minute tips that always arrive
 exactly when they are needed.
 
 **mhummels**, **syalcin** and **aouassar** — for their feedback on
-A-MAZE-ING.
+A-Maze-ing.
 
 Also thanks to **mhummels**, **gdupret**, **gwfranco**, **cgazen**,
-**kprist**, and **dloic** for sharing their A-MAZE-ING — seeing
+**kprist**, and **dloic** for sharing their A-Maze-ing — seeing
 different approaches to the same project was invaluable.
