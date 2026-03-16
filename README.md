@@ -8,6 +8,8 @@ documentation and many students hit the same walls. Everything here
 is based on my original research and experimentation done during the
 development of A-Maze-ing.
 
+▶️ A_MAZE_ING demo: https://www.youtube.com/watch?v=TnMn02CwirY
+
 The goal is not to hand you ready-made solutions - it is to save you
 the days of searching that should not be necessary just to open a window
 and draw a pixel. This is the guide that would have been useful
