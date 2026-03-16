@@ -3,25 +3,13 @@ by tdarscot and tdhenain at 42 Belgium._
 
 ## About
 
-This guide exists because the Python MLX binding has almost no
-documentation and many students hit the same walls. Everything here
-is based on my original research and experimentation done during the
-development of A-Maze-ing.
+This guide exists because the Python MLX binding has almost no documentation and many students hit the same walls. Everything here is based on my original research and experimentation done during the development of A-Maze-ing.
 
 ▶️ A-Maze-ing demo: https://www.youtube.com/watch?v=TnMn02CwirY
 
-The goal is not to hand you ready-made solutions - it is to save you
-the days of searching that should not be necessary just to open a window
-and draw a pixel. This is the guide that would have been useful
-as I started developing the visualizer for A-Maze-ing: enough to get
-unstuck, not enough to skip the discovery. The progressive
-understanding of how MLX works, and the moment where everything
-falls into place, is yours to experience.
+The goal is not to hand you ready-made solutions - it is to save you the days of searching that should not be necessary just to open a window and draw a pixel. This is the guide that would have been useful as I started developing the visualizer for A-Maze-ing: enough to get unstuck, not enough to skip the discovery. The progressive understanding of how MLX works, and the moment where everything falls into place, is yours to experience.
 
-MLX has more to offer than what is covered here. Bitmap fonts,
-sprites, elaborate UI and other techniques are left for you to find.
-This guide serves as a bridge, from completely lost to having
-a solid foundation you can build your own project on.
+MLX has more to offer than what is covered here. Bitmap fonts, sprites, elaborate UI and other techniques are left for you to find. This guide serves as a bridge, from completely lost to having a solid foundation you can build your own project on.
 
 ## Installation
 
@@ -32,119 +20,154 @@ a solid foundation you can build your own project on.
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
-### Mac Silicon: Docker setup (skip if on other platform)
+### Mac Silicon: Docker setup (skip if on Linux)
 
-Install XQuartz via Homebrew or from [xquartz.org](https://www.xquartz.org):
+**Step 1 — Install XQuartz**
+
 ```bash
 brew install --cask xquartz
 ```
 
-Then open XQuartz and enable "Allow connections from network clients" in XQuartz → Settings → Security. Log out and back in for the setting to take effect.
+Or download from [xquartz.org](https://www.xquartz.org). After installation, log out and back in.
 
-Start a container:
+**Step 2 — Enable network connections in XQuartz**
+
+Open XQuartz → Settings → Security → check "Allow connections from network clients". Log out and back in for the setting to take effect.
+
+**Step 3 — Open XQuartz and allow local connections**
+
+Open XQuartz first, then in your terminal (Mac, outside Docker):
+
 ```bash
-docker run -it --platform linux/amd64 \
-  -e DISPLAY=host.docker.internal:0 \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  ubuntu:22.04 bash
+xhost + localhost
 ```
 
-Then follow the installation steps below inside the container.
+Run this every time before starting the container.
+
+**Step 4 — Start the container with a shell attached**
+
+```bash
+docker run -it --platform linux/amd64 --name mlxguide -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix ubuntu:22.04 bash
+```
+
+This starts the container and drops you directly into a shell inside it. All following steps run inside this shell.
 
 ### Installation steps (all platforms)
 
-**1. Install Python and pip**
+**Step 1 — Install Python and pip**
 
-Skip if already installed (`python3 --version` to check).
+⚠️ May be slow on Mac Silicon — can take up to a minute to complete.
+
 ```bash
 apt-get update && apt-get install -y python3 python3-pip
 ```
 
-**2. Install git**
+**Step 2 — Install git**
 
-Skip if already installed (`git --version` to check).
 ```bash
 apt-get install -y git
 ```
 
-**3. Clone the repository**
+**Step 3 — Clone the repository**
+
 ```bash
 git clone https://github.com/tetrotibo/MLX-Python-Guide-to-the-Galaxy.git mlxguide
 cd mlxguide
 ```
 
-**4. Install X11 and Vulkan dependencies**
+**Step 4 — Install X11 and Vulkan dependencies**
+
 ```bash
 apt-get install -y libx11-dev libxext-dev libxcb-keysyms1 libvulkan1
 ```
 
-**5. Install MLX wheel**
+**Step 5 — Install the MLX wheel**
+
 ```bash
 pip3 install 00_install/mlx-2.2-py3-none-any.whl
 ```
 
-**6. Verify**
+**Step 6 — Verify**
+
 ```bash
 python3 01_modules/M01_init.py
 ```
 
-A window should open. Press ESC or click the X button to close it.
+A window should open on your Mac. Press ESC or click the X button to close it. If it opens, everything is working.
+
+### Troubleshooting
+
+**`munmap_chunk(): invalid pointer` / `Aborted`**
+MLX crashed before connecting to the display. Check that:
+- XQuartz is open on your Mac before starting the container
+- You ran `xhost + localhost` in a Mac terminal before starting the container
+- The `DISPLAY` variable is set correctly — run `echo $DISPLAY` inside the container, it should return `host.docker.internal:0`
+
+**`libmlx.so: No such file or directory`**
+The container is running as `arm64` instead of `amd64`. Make sure your `docker run` command includes `--platform linux/amd64`.
+
+**Window doesn't appear but no error**
+Run `echo $DISPLAY` inside the container. If it returns empty, the environment variable was not passed in. Stop the container and restart it with the full `docker run` command above.
+
+**`pip3: command not found`**
+Run Step 1 again — `python3-pip` may not have installed correctly.
 
 ## Repo Structure
 
-| Folder                     | Contents                        |
-| -------------------------- | ------------------------------- |
-| `00_install/`              | MLX wheel                       |
-| `01_modules/`              | Module files (M01–M06)          |
-| `02_common_errors/`        | Error demonstrations (E01–E07)  |
-| `03_diagnostics/`          | Diagnostic scripts (D01–D03)    |
-| `04_broken_mlx_functions/` | Broken function demos (B01)     |
-| `05_template/`             | Blank starter template          |
+| Folder                     | Contents                       |
+| -------------------------- | ------------------------------ |
+| `00_install/`              | MLX wheel                      |
+| `01_modules/`              | Module files (M01–M06)         |
+| `02_common_errors/`        | Error demonstrations (E01–E07) |
+| `03_diagnostics/`          | Diagnostic scripts (D01–D03)   |
+| `04_broken_mlx_functions/` | Broken function demos (B01)    |
+| `05_template/`             | Blank starter template         |
 
 ## Modules
 
-| File                  | Topic                                              |
-| --------------------- | -------------------------------------------------- |
-| M01 - init            | MLX init, window creation, clean shutdown          |
-| M02 - image buffer    | Image buffer, `write_pixel()`, `write_rect()`      |
-| M03 - tile grid       | Tile coordinates, inset tiles, wall bitmasks       |
-| M04 - draw order      | Draw order, compositor pattern, UI split           |
-| M05 - text            | `mlx_string_put()`, color conversion, draw order   |
-| M06 - interactive     | Input handling, game loop, deferred pattern        |
+| File               | Topic                                            |
+| ------------------ | ------------------------------------------------ |
+| M01 - init         | MLX init, window creation, clean shutdown        |
+| M02 - image buffer | Image buffer, `write_pixel()`, `write_rect()`    |
+| M03 - tile grid    | Tile coordinates, inset tiles, wall bitmasks     |
+| M04 - draw order   | Draw order, compositor pattern, UI split         |
+| M05 - text         | `mlx_string_put()`, color conversion, draw order |
+| M06 - interactive  | Input handling, game loop, deferred pattern      |
 
 ## Common Errors
 
-| File                  | Error                                              |
-| --------------------- | -------------------------------------------------- |
-| E01 - bounds          | `write_rect()` overflow - silent corruption vs crash |
-| E02 - no loop         | Missing `mlx_loop()` - window closes immediately   |
-| E03 - mask key press  | Wrong mask on key hook - keys never fire           |
-| E04 - x button        | Missing close handler - X button has no effect     |
-| E05 - sync loop       | `mlx_loop()` is single-threaded and synchronous    |
-| E06 - text overwrite  | `mlx_string_put()` erased by `mlx_put_image_to_window()` |
-| E07 - str color       | `mlx_string_put()` expects 0xBBGGRR not 0xRRGGBB  |
+| File                 | Error                                                    |
+| -------------------- | -------------------------------------------------------- |
+| E01 - bounds         | `write_rect()` overflow - silent corruption vs crash     |
+| E02 - no loop        | Missing `mlx_loop()` - window closes immediately         |
+| E03 - mask key press | Wrong mask on key hook - keys never fire                 |
+| E04 - x button       | Missing close handler - X button has no effect           |
+| E05 - sync loop      | `mlx_loop()` is single-threaded and synchronous          |
+| E06 - text overwrite | `mlx_string_put()` erased by `mlx_put_image_to_window()` |
+| E07 - str color      | `mlx_string_put()` expects 0xBBGGRR not 0xRRGGBB         |
 
 ## Diagnostics
 
-| File                  | Topic                                              |
-| --------------------- | -------------------------------------------------- |
-| D01 - memory leak     | `mlx_new_image()` without `mlx_destroy_image()`   |
-| D02 - frame rate      | Measuring effective FPS via `mlx_loop_hook()`     |
-| D03 - key repeat      | X11/XQuartz key autorepeat behavior               |
+| File              | Topic                                           |
+| ----------------- | ----------------------------------------------- |
+| D01 - memory leak | `mlx_new_image()` without `mlx_destroy_image()` |
+| D02 - frame rate  | Measuring effective FPS via `mlx_loop_hook()`   |
+| D03 - key repeat  | X11/XQuartz key autorepeat behavior             |
 
 ## Broken MLX Functions
 
-| File                  | Topic                                              |
-| --------------------- | -------------------------------------------------- |
-| B01 - pixel put 01    | `mlx_pixel_put()` called before `mlx_loop()` - black |
-| B01 - pixel put 02    | `mlx_pixel_put()` called from key handler - black  |
-| B01 - pixel put 03    | `mlx_pixel_put()` with explicit flush - black      |
+| File               | Topic                                                |
+| ------------------ | ---------------------------------------------------- |
+| B01 - pixel put 01 | `mlx_pixel_put()` called before `mlx_loop()` - black |
+| B01 - pixel put 02 | `mlx_pixel_put()` called from key handler - black    |
+| B01 - pixel put 03 | `mlx_pixel_put()` with explicit flush - black        |
 
 ## Conventions
 
 ### Tile coordinates
 
 Tile indices are always converted to pixel positions via:
+
 ```python
 def tile_px(tile_col): return (tile_col + BORDER) * TILE_SIZE
 def tile_py(tile_row): return (tile_row + BORDER) * TILE_SIZE
@@ -172,6 +195,7 @@ M03 but not used in the guide.
 
 MLX has no real layers - just one flat pixel buffer. The last
 `write_rect()` call to touch a pixel wins. The correct draw stack:
+
 ```
 1. Background fill + floor tiles
 2. Pattern tiles
@@ -187,22 +211,23 @@ MLX has no real layers - just one flat pixel buffer. The last
 All constants use `0xRRGGBB` with a `C_` prefix. `write_rect()`
 handles the BGR conversion internally.
 
-| Constant        | Role                            |
-| --------------- | ------------------------------- |
-| C_BG            | Full-window background fill     |
-| C_FLOOR         | Default tile interior           |
-| C_WALL          | Wall strip color                |
-| C_ENTRY         | Entry tile                      |
-| C_EXIT          | Exit tile                       |
-| C_PATH          | Solution path tile              |
-| C_PATTERN       | Decorative highlight tile       |
-| C_UI_BG         | UI panel background             |
-| C_UI_ACTIVE     | UI panel highlighted element    |
-| C_UI_INACTIVE   | UI panel default element        |
+| Constant      | Role                         |
+| ------------- | ---------------------------- |
+| C_BG          | Full-window background fill  |
+| C_FLOOR       | Default tile interior        |
+| C_WALL        | Wall strip color             |
+| C_ENTRY       | Entry tile                   |
+| C_EXIT        | Exit tile                    |
+| C_PATH        | Solution path tile           |
+| C_PATTERN     | Decorative highlight tile    |
+| C_UI_BG       | UI panel background          |
+| C_UI_ACTIVE   | UI panel highlighted element |
+| C_UI_INACTIVE | UI panel default element     |
 
 ## Wall Bitmask Format
 
 Used in M03 onwards to encode which walls are present on a cell:
+
 ```
 bit 3 (0b1000) = West
 bit 2 (0b0100) = South
@@ -215,11 +240,11 @@ Extracting a bit: `(bitmask >> bit_position) & 1`
 
 ## Keyboard Events
 
-| Event                | X11/XQuartz number | mlx_hook mask |
-| -------------------- | ------------------ | ------------- |
-| EVENT_KEY_PRESS      | 2                  | 1             |
-| EVENT_KEY_RELEASE    | 3                  | 2             |
-| EVENT_WINDOW_CLOSE   | 33                 | 0             |
+| Event              | X11/XQuartz number | mlx_hook mask |
+| ------------------ | ------------------ | ------------- |
+| EVENT_KEY_PRESS    | 2                  | 1             |
+| EVENT_KEY_RELEASE  | 3                  | 2             |
+| EVENT_WINDOW_CLOSE | 33                 | 0             |
 
 ### Deferred pattern
 
@@ -227,6 +252,7 @@ Key handlers run synchronously inside `mlx_loop()` - there is no
 parallelism. While a handler executes, the loop is paused and no
 redraws happen. The deferred pattern lets you render visual feedback
 before work runs on the next frame:
+
 ```python
 # In key_press_handler:
 pending_action = True
