@@ -20,7 +20,7 @@ MLX has more to offer than what is covered here. Bitmap fonts, sprites, elaborat
 | **Mac Intel** | 🟡 Should work - not tested |
 | **Windows** | 🟡 WSL2 with WSLg may work - not tested |
 
-### Mac Silicon: Docker setup (skip if on Linux)
+### Mac Silicon: Docker setup (skip if on other platform)
 
 **Step 1 — Install XQuartz**
 
