@@ -58,7 +58,7 @@ This starts the container and drops you directly into a shell inside it. All fol
 
 **Step 1 — Install Python and pip**
 
-⚠️ May be slow on Mac Silicon — can take up to a minute to complete.
+⏱️ Can take up to a minute to complete, be patient!
 
 ```bash
 apt-get update && apt-get install -y python3 python3-pip
