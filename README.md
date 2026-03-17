@@ -141,23 +141,23 @@ Run Step 1 again — `python3-pip` may not have installed correctly.
 
 <br>
 
-**M02 — Image buffer**
+**M02 — Image buffer**<br>
 Six solid-color rectangles drawn with `write_rect()` — the foundation of every visual in this guide.
 ![M02](assets/M02_screenshot.png)
 
-**M03 — Tile grid**
+**M03 — Tile grid**<br>
 A full tile grid with inset rendering and wall bitmasks. The two blue tiles mark entry and exit.
 ![M03](assets/M03_screenshot.png)
 
-**M04 — Draw order**
+**M04 — Draw order**<br>
 The compositor pattern in action: background, path, pattern, and UI panel each drawn in the correct order.
 ![M04](assets/M04_screenshot.png)
 
-**M05 — Text and color constants**
+**M05 — Text and color constants**<br>
 All `C_` color constants rendered as swatches with their hex values and names, drawn with `mlx_string_put()`.
 ![M05](assets/M05_screenshot.png)
 
-**M06 — Interactive**
+**M06 — Interactive**<br>
 The full interactive loop: arrow key movement, SPACE to regenerate, and a live UI panel with keybinds.
 ![M06](assets/M06_screenshot.png)
 
