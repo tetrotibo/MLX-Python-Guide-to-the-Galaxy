@@ -136,6 +136,33 @@ Run Step 1 again — `python3-pip` may not have installed correctly.
 | M05 - text         | `mlx_string_put()`, color conversion, draw order |
 | M06 - interactive  | Input handling, game loop, deferred pattern      |
 
+<details>
+<summary>Screenshots</summary>
+
+<br>
+
+**M02 — Image buffer**
+Six solid-color rectangles drawn with `write_rect()` — the foundation of every visual in this guide.
+![M02](assets/M02_screenshot.png)
+
+**M03 — Tile grid**
+A full tile grid with inset rendering and wall bitmasks. The two blue tiles mark entry and exit.
+![M03](assets/M03_screenshot.png)
+
+**M04 — Draw order**
+The compositor pattern in action: background, path, pattern, and UI panel each drawn in the correct order.
+![M04](assets/M04_screenshot.png)
+
+**M05 — Text and color constants**
+All `C_` color constants rendered as swatches with their hex values and names, drawn with `mlx_string_put()`.
+![M05](assets/M05_screenshot.png)
+
+**M06 — Interactive**
+The full interactive loop: arrow key movement, SPACE to regenerate, and a live UI panel with keybinds.
+![M06](assets/M06_screenshot.png)
+
+</details>
+
 ## Common Errors
 
 | File                 | Error                                                    |
@@ -296,3 +323,4 @@ A-Maze-ing.
 Also thanks to **mhummels**, **gdupret**, **gwfranco**, **cgazen**,
 **kprist**, and **dloic** for sharing their A-Maze-ing — seeing
 different approaches to the same project was invaluable.
+
