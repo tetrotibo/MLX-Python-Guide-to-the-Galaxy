@@ -5,7 +5,7 @@ by tdarscot and tdhenain at 42 Belgium._
 
 ## About
 
-This guide exists because the Python MLX binding has almost no documentation and many students hit the same walls. Everything here is based on my original research and experimentation done during the development of A-Maze-ing.
+This guide exists because the MLX Python binding has almost no documentation and many students hit the same walls. Everything here is based on my original research and experimentation done during the development of A-Maze-ing.
 
 ▶️ A-Maze-ing demo: https://www.youtube.com/watch?v=TnMn02CwirY
 
